@@ -32,27 +32,51 @@
 //   return true;
 // }
 
+// function soup(phrase, bank) {
+//   const count = {};
+//   bank = bank.toLowerCase();
+
+//   for (let i = 0; i < bank.length; i++) {
+//     const char = bank[i];
+//     if (count[char]) {
+//       count[char]++;
+//     } else {
+//       count[char] = 1;
+//     }
+//   }
+
+//   phrase = phrase.toLowerCase();
+
+//   for (let i = 0; i < phrase.length; i++) {
+//     const char = phrase[i];
+//     if (!count[char]) {
+//       return false;
+//     }
+//     count[char]--;
+//   }
+
+//   return true;
+// }
 function soup(phrase, bank) {
-  if (typeof phrase !== "string" || typeof bank !== "string") return false;
+  const count = {};
+  bank = bank.toLowerCase();
 
-  phrase = phrase.replace(/[^a-z]/gi, "").toLowerCase();
-  bank = bank.replace(/[^a-z]/gi, "").toLowerCase();
-
-  const phraseMap = {};
-  const bankMap = {};
-
-  for (let char of phrase) {
-    phraseMap[char] = (phraseMap[char] || 0) + 1;
+  for (let i = 0; i < bank.length; i++) {
+    let char = bank[i];
+    if (count[char]) {
+      count[char]++;
+    } else {
+      count[char] = 1;
+    }
   }
 
-  for (let char of bank) {
-    bankMap[char] = (bankMap[char] || 0) + 1;
-  }
-
-  for (let key in phraseMap) {
-    if (!bankMap[key] || bankMap[key] < phraseMap[key]) {
+  phrase = phrase.toLowerCase();
+  for (let i = 0; i < phrase.length; i++) {
+    let char = phrase[i];
+    if (!count[char]) {
       return false;
     }
+    count[char]--;
   }
 
   return true;
