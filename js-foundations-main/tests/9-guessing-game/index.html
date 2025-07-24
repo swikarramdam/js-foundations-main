@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Guessing Game</title>
-    <link rel="stylesheet" href="main.css">
-    <!-- the MAIN.CSS file is linked here -->
+    <link rel="stylesheet" href="main.css" />
   </head>
-
   <body>
+    <div class="container">
+      <h1>Guessing Game</h1>
+      <input id="myInput" type="number" /><button id="checkBtn">Check</button>
+      <p id="result"></p>
 
+      <p><strong>Previous Guesses:</strong><span id="prevGuess"></span></p>
 
-
-
-
-    <!-- <script src='js/guessing-game.js'></script> -->
-    <!-- uncomment the script tag above when you are ready to add JavaScript to your document -->
+      <button id="hintsBtn">Hints</button>
+      <p id="hints"></p>
+      <button id="playAgain">Play Again</button>
+      <p id="guessesLeft"></p>
+    </div>
+    <script src="./js/guessing-game.js"></script>
   </body>
-
 </html>

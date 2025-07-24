@@ -121,18 +121,6 @@ class VanishingMan {
     }
   }
 
-  // simulateVanishingMan(secretWord) {
-  //   const game = new VanishingMan(secretWord);
-  //   const char = "abcdefghijklmnopqrstuvwxyz".split("");
-
-  //   while (game.gameState === "playing") {
-  //     const randomIndex = Math.floor(Math.random() * 26);
-  //     const guess = char[randomIndex];
-  //     game.submitGuess(guess);
-  //   }
-
-  //   return game.getGameStateMessage();
-  // }
 }
 function simulateVanishingMan(secretWord) {
   const game = new VanishingMan(secretWord);
