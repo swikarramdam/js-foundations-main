@@ -6,3 +6,4 @@ function callAll(obj, arr) {
   }
   return results;
 }
+//understood problem but not the purpose of it
